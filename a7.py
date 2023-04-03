@@ -1,4 +1,3 @@
-
 # coding: utf-8
 
 # In[65]:
@@ -31,18 +30,13 @@ X = model[model.wv.vocab]
 tsne = TSNE(n_components=2)
 X_tsne = tsne.fit_transform(X)
 # create a scatter plot of the projection
-pyplot.scatter(result[:, 0], result[:, 1])
+# create a scatter plot of the projection
+pyplot.scatter(X_tsne[:, 0], X_tsne[:, 1])
 words = list(model.wv.vocab)
 for i, word in enumerate(words):
-	pyplot.annotate(word, xy=(result[i, 0], result[i, 1]))
+    pyplot.annotate(word, xy=(X_tsne[i, 0], X_tsne[i, 1]))
 pyplot.show()
 import time
 import datetime
 print (datetime.datetime.now().strftime("%y-%m-%d-%H-%M"))
-
-
-# In[68]:
-
-
-X
 
